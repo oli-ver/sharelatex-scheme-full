@@ -1,11 +1,11 @@
-# Nimm die alte Version
+# Commands created according to instructions in https://blog.iamjannik.me/2018/sharelatex/?utm_source=latest-widget&utm_medium=latest-widget&utm_campaign=latest-widget
+# use latest version
 FROM sharelatex/sharelatex:latest
 
-# Update texlive/tlmgr nach dieser Anleitung:
+# Update texlive/tlmgr according to official documentation:
 # https://www.tug.org/texlive/upgrade.html
 WORKDIR /usr/local/texlive
 
-# Update alle vorhandenen Pakete und installiere
-# die Pakete, auf die scheme-medium dependet.
+# Update and install all packages
 RUN tlmgr update --self --all
 RUN tlmgr install scheme-full
